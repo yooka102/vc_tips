@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: Multi Tips
+Plugin Name: Wp Tips
 Plugin URI: http://meee.pl
 Description: Tips for wp
 Version: 2015.10.25
