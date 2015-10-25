@@ -9,6 +9,8 @@ Author URI: http://meee.pl
 License: GPL2
 */
 
+if(!defined( 'ABSPATH' ) ) exit;
+
 #Hide Visual Composer generator
 if(function_exists('visual_composer')){
 	add_action('wp', 'remove_vc_generator', 100);
