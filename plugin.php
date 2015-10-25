@@ -1,8 +1,8 @@
 <?php
 /*
-Plugin Name: Visual Composer Tips
+Plugin Name: Multi Tips
 Plugin URI: http://meee.pl
-Description: Tips for Visual Composer
+Description: Tips for wp
 Version: 2015.10.25
 Author: yooka
 Author URI: http://meee.pl
@@ -11,6 +11,15 @@ License: GPL2
 
 if(!defined( 'ABSPATH' ) ) exit;
 
+#Hide Revolution Slider generator
+add_filter('wp_enqueue_scripts', 'clear_revslider', 100);
+if(!function_exists('clear_revslider')){
+	function clear_revslider(){
+		if(class_exists('RevSliderFront')){
+			remove_action('wp_head', array('RevSliderFront', 'add_meta_generator'));
+		}
+	}
+}
 #Hide Visual Composer generator
 if(function_exists('visual_composer')){
 	add_action('wp', 'remove_vc_generator', 100);
