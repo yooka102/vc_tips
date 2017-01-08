@@ -20,23 +20,26 @@ if(!function_exists('clear_revslider')){
 		}
 	}
 }
+
 #Hide Visual Composer generator
 if(function_exists('visual_composer')){
-	add_action('wp', 'remove_vc_generator', 100);
 	if(!function_exists('remove_vc_generator')){
 		function remove_vc_generator(){
 			remove_action('wp_head',	array(visual_composer(), 'addMetaData'));
 		}
 	}
+	add_action('wp', 'remove_vc_generator', 100);
+	
 }
 
 #Hide activation nag for Visual Composer
 if(function_exists('vc_license')){
-	add_action('admin_print_scripts-post.php', 'remove_vc_license_notice', 100);
-	if(!function_exists('vc_license')){
+	if(!function_exists('remove_vc_license_notice')){
 		function remove_vc_license_notice(){
 			remove_action('admin_notices',	array(vc_license(), 'adminNoticeLicenseActivation'));
 		}
 	}
+	add_action('admin_init', 'remove_vc_license_notice', 100);
+	
 }
 
