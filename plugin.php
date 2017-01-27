@@ -1,11 +1,11 @@
 <?php
 /*
 Plugin Name: Wp Tips
-Plugin URI: http://meee.pl
+Plugin URI: 
 Description: Tips for wp
 Version: 2015.10.25
 Author: yooka
-Author URI: http://meee.pl
+Author URI:
 License: GPL2
 */
 
